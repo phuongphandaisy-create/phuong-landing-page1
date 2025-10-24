@@ -1,0 +1,522 @@
+{
+  "config": {
+    "configFile": "E:\\Landing page\\playwright.config.ts",
+    "rootDir": "E:/Landing page/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 5
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "E:/Landing page/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "E:/Landing page/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/e2e/**/*.spec.ts",
+          "**/examples/**/*.spec.ts",
+          "**/debug/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.0",
+    "workers": 8,
+    "webServer": {
+      "command": "npm run dev",
+      "url": "http://localhost:3000",
+      "reuseExistingServer": true,
+      "timeout": 120000,
+      "stdout": "pipe",
+      "stderr": "pipe"
+    }
+  },
+  "suites": [
+    {
+      "title": "e2e\\auth\\authentication.spec.ts",
+      "file": "e2e/auth/authentication.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Authentication Components Tests",
+          "file": "e2e/auth/authentication.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Đăng nhập thành công với thông tin hợp lệ",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8854,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/AI-Assisted Landing Page/\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveTitle\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/AI-Assisted Landing Page/\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveTitle\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"\"\u001b[22m\n\n    at action (E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts:55:26)\n    at TestLogger.logStep (E:\\Landing page\\tests\\helpers\\test-helpers.ts:11:15)\n    at E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts:54:18",
+                        "location": {
+                          "file": "E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts",
+                          "column": 26,
+                          "line": 55
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 53 |\u001b[39m   test(\u001b[32m'Đăng nhập thành công với thông tin hợp lệ'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 54 |\u001b[39m     \u001b[36mawait\u001b[39m logger\u001b[33m.\u001b[39mlogStep(\u001b[32m'Kiểm tra trang chủ đã load'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 55 |\u001b[39m       \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveTitle(\u001b[35m/AI-Assisted Landing Page/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 56 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 57 |\u001b[39m\n \u001b[90m 58 |\u001b[39m     \u001b[36mawait\u001b[39m authHelper\u001b[33m.\u001b[39mlogin(\u001b[32m'admin'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'admin123'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts",
+                            "column": 26,
+                            "line": 55
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/AI-Assisted Landing Page/\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveTitle\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 53 |\u001b[39m   test(\u001b[32m'Đăng nhập thành công với thông tin hợp lệ'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 54 |\u001b[39m     \u001b[36mawait\u001b[39m logger\u001b[33m.\u001b[39mlogStep(\u001b[32m'Kiểm tra trang chủ đã load'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 55 |\u001b[39m       \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveTitle(\u001b[35m/AI-Assisted Landing Page/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 56 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 57 |\u001b[39m\n \u001b[90m 58 |\u001b[39m     \u001b[36mawait\u001b[39m authHelper\u001b[33m.\u001b[39mlogin(\u001b[32m'admin'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'admin123'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at action (E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts:55:26)\u001b[22m\n\u001b[2m    at TestLogger.logStep (E:\\Landing page\\tests\\helpers\\test-helpers.ts:11:15)\u001b[22m\n\u001b[2m    at E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts:54:18\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "🔍 [Authentication Tests] Khởi tạo test trên môi trường: test\n"
+                        },
+                        {
+                          "text": "✅ [Authentication Tests] Khởi tạo test trên môi trường: test - Completed\n"
+                        },
+                        {
+                          "text": "🔍 [Authentication Tests] Kiểm tra trang chủ đã load\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-24T08:47:39.117Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "E:\\Landing page\\test-results\\e2e-auth-authentication-Au-1d33d-h-công-với-thông-tin-hợp-lệ-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "E:\\Landing page\\test-results\\e2e-auth-authentication-Au-1d33d-h-công-với-thông-tin-hợp-lệ-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "E:\\Landing page\\test-results\\e2e-auth-authentication-Au-1d33d-h-công-với-thông-tin-hợp-lệ-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts",
+                        "column": 26,
+                        "line": 55
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d94f9763e12f5aa6433f-42417416c41a55b70a7f",
+              "file": "e2e/auth/authentication.spec.ts",
+              "line": 53,
+              "column": 7
+            },
+            {
+              "title": "Đăng nhập thất bại với thông tin không hợp lệ",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 14235,
+                      "error": {
+                        "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"login-button\"]')\u001b[22m\n",
+                        "stack": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"login-button\"]')\u001b[22m\n\n    at action (E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts:70:18)\n    at TestLogger.logStep (E:\\Landing page\\tests\\helpers\\test-helpers.ts:11:15)\n    at E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts:69:18",
+                        "location": {
+                          "file": "E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts",
+                          "column": 18,
+                          "line": 70
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 68 |\u001b[39m   test(\u001b[32m'Đăng nhập thất bại với thông tin không hợp lệ'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 69 |\u001b[39m     \u001b[36mawait\u001b[39m logger\u001b[33m.\u001b[39mlogStep(\u001b[32m'Thử đăng nhập với thông tin sai'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 70 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'[data-testid=\"login-button\"]'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 71 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'[data-testid=\"username-input\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'wronguser'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 72 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'[data-testid=\"password-input\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'wrongpassword'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 73 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'[data-testid=\"submit-login\"]'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts",
+                            "column": 18,
+                            "line": 70
+                          },
+                          "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"login-button\"]')\u001b[22m\n\n\n\u001b[0m \u001b[90m 68 |\u001b[39m   test(\u001b[32m'Đăng nhập thất bại với thông tin không hợp lệ'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 69 |\u001b[39m     \u001b[36mawait\u001b[39m logger\u001b[33m.\u001b[39mlogStep(\u001b[32m'Thử đăng nhập với thông tin sai'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 70 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'[data-testid=\"login-button\"]'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 71 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'[data-testid=\"username-input\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'wronguser'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 72 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'[data-testid=\"password-input\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'wrongpassword'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 73 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'[data-testid=\"submit-login\"]'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at action (E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts:70:18)\u001b[22m\n\u001b[2m    at TestLogger.logStep (E:\\Landing page\\tests\\helpers\\test-helpers.ts:11:15)\u001b[22m\n\u001b[2m    at E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts:69:18\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "🔍 [Authentication Tests] Khởi tạo test trên môi trường: test\n"
+                        },
+                        {
+                          "text": "✅ [Authentication Tests] Khởi tạo test trên môi trường: test - Completed\n"
+                        },
+                        {
+                          "text": "🔍 [Authentication Tests] Thử đăng nhập với thông tin sai\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-24T08:47:39.115Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "E:\\Landing page\\test-results\\e2e-auth-authentication-Au-95690--với-thông-tin-không-hợp-lệ-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "E:\\Landing page\\test-results\\e2e-auth-authentication-Au-95690--với-thông-tin-không-hợp-lệ-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "E:\\Landing page\\test-results\\e2e-auth-authentication-Au-95690--với-thông-tin-không-hợp-lệ-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts",
+                        "column": 18,
+                        "line": 70
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d94f9763e12f5aa6433f-465ea1c50f045b4bfdb2",
+              "file": "e2e/auth/authentication.spec.ts",
+              "line": 68,
+              "column": 7
+            },
+            {
+              "title": "Đăng xuất thành công",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 14221,
+                      "error": {
+                        "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"login-button\"]')\u001b[22m\n",
+                        "stack": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"login-button\"]')\u001b[22m\n\n    at action (E:\\Landing page\\tests\\helpers\\test-helpers.ts:32:29)\n    at TestLogger.logStep (E:\\Landing page\\tests\\helpers\\test-helpers.ts:11:15)\n    at AuthHelper.login (E:\\Landing page\\tests\\helpers\\test-helpers.ts:31:27)\n    at E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts:86:22",
+                        "location": {
+                          "file": "E:\\Landing page\\tests\\helpers\\test-helpers.ts",
+                          "column": 29,
+                          "line": 32
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mhelpers\\test-helpers.ts:32\n\n\u001b[0m \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m login(username\u001b[33m:\u001b[39m string \u001b[33m=\u001b[39m \u001b[32m'admin'\u001b[39m\u001b[33m,\u001b[39m password\u001b[33m:\u001b[39m string \u001b[33m=\u001b[39m \u001b[32m'admin123'\u001b[39m) {\n \u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlogger\u001b[33m.\u001b[39mlogStep(\u001b[32m'Opening login modal'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m             \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[32m'[data-testid=\"login-button\"]'\u001b[39m)\n \u001b[90m    |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m             \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"login-modal\"]'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m 34 |\u001b[39m         })\n \u001b[90m 35 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "E:\\Landing page\\tests\\helpers\\test-helpers.ts",
+                            "column": 29,
+                            "line": 32
+                          },
+                          "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"login-button\"]')\u001b[22m\n\n\n\u001b[90m   at \u001b[39mhelpers\\test-helpers.ts:32\n\n\u001b[0m \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m login(username\u001b[33m:\u001b[39m string \u001b[33m=\u001b[39m \u001b[32m'admin'\u001b[39m\u001b[33m,\u001b[39m password\u001b[33m:\u001b[39m string \u001b[33m=\u001b[39m \u001b[32m'admin123'\u001b[39m) {\n \u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlogger\u001b[33m.\u001b[39mlogStep(\u001b[32m'Opening login modal'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m             \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[32m'[data-testid=\"login-button\"]'\u001b[39m)\n \u001b[90m    |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m             \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"login-modal\"]'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m 34 |\u001b[39m         })\n \u001b[90m 35 |\u001b[39m\u001b[0m\n\u001b[2m    at action (E:\\Landing page\\tests\\helpers\\test-helpers.ts:32:29)\u001b[22m\n\u001b[2m    at TestLogger.logStep (E:\\Landing page\\tests\\helpers\\test-helpers.ts:11:15)\u001b[22m\n\u001b[2m    at AuthHelper.login (E:\\Landing page\\tests\\helpers\\test-helpers.ts:31:27)\u001b[22m\n\u001b[2m    at E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts:86:22\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "🔍 [Authentication Tests] Khởi tạo test trên môi trường: test\n"
+                        },
+                        {
+                          "text": "✅ [Authentication Tests] Khởi tạo test trên môi trường: test - Completed\n"
+                        },
+                        {
+                          "text": "🔍 [Authentication Tests] Opening login modal\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-24T08:47:39.115Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "E:\\Landing page\\test-results\\e2e-auth-authentication-Au-e9d26--Tests-Đăng-xuất-thành-công-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "E:\\Landing page\\test-results\\e2e-auth-authentication-Au-e9d26--Tests-Đăng-xuất-thành-công-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "E:\\Landing page\\test-results\\e2e-auth-authentication-Au-e9d26--Tests-Đăng-xuất-thành-công-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "E:\\Landing page\\tests\\helpers\\test-helpers.ts",
+                        "column": 29,
+                        "line": 32
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d94f9763e12f5aa6433f-c93cc30ffda7d8d8082a",
+              "file": "e2e/auth/authentication.spec.ts",
+              "line": 84,
+              "column": 7
+            },
+            {
+              "title": "Kiểm tra validation form đăng nhập",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 14213,
+                      "error": {
+                        "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"login-button\"]')\u001b[22m\n",
+                        "stack": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"login-button\"]')\u001b[22m\n\n    at action (E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts:104:18)\n    at TestLogger.logStep (E:\\Landing page\\tests\\helpers\\test-helpers.ts:11:15)\n    at E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts:103:18",
+                        "location": {
+                          "file": "E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts",
+                          "column": 18,
+                          "line": 104
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 102 |\u001b[39m   test(\u001b[32m'Kiểm tra validation form đăng nhập'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 103 |\u001b[39m     \u001b[36mawait\u001b[39m logger\u001b[33m.\u001b[39mlogStep(\u001b[32m'Mở modal đăng nhập'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'[data-testid=\"login-button\"]'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 106 |\u001b[39m\n \u001b[90m 107 |\u001b[39m     \u001b[36mawait\u001b[39m logger\u001b[33m.\u001b[39mlogStep(\u001b[32m'Thử submit form trống'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts",
+                            "column": 18,
+                            "line": 104
+                          },
+                          "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"login-button\"]')\u001b[22m\n\n\n\u001b[0m \u001b[90m 102 |\u001b[39m   test(\u001b[32m'Kiểm tra validation form đăng nhập'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 103 |\u001b[39m     \u001b[36mawait\u001b[39m logger\u001b[33m.\u001b[39mlogStep(\u001b[32m'Mở modal đăng nhập'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'[data-testid=\"login-button\"]'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 106 |\u001b[39m\n \u001b[90m 107 |\u001b[39m     \u001b[36mawait\u001b[39m logger\u001b[33m.\u001b[39mlogStep(\u001b[32m'Thử submit form trống'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at action (E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts:104:18)\u001b[22m\n\u001b[2m    at TestLogger.logStep (E:\\Landing page\\tests\\helpers\\test-helpers.ts:11:15)\u001b[22m\n\u001b[2m    at E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts:103:18\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "🔍 [Authentication Tests] Khởi tạo test trên môi trường: test\n"
+                        },
+                        {
+                          "text": "✅ [Authentication Tests] Khởi tạo test trên môi trường: test - Completed\n"
+                        },
+                        {
+                          "text": "🔍 [Authentication Tests] Mở modal đăng nhập\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-24T08:47:39.115Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "E:\\Landing page\\test-results\\e2e-auth-authentication-Au-49c02-a-validation-form-đăng-nhập-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "E:\\Landing page\\test-results\\e2e-auth-authentication-Au-49c02-a-validation-form-đăng-nhập-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "E:\\Landing page\\test-results\\e2e-auth-authentication-Au-49c02-a-validation-form-đăng-nhập-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts",
+                        "column": 18,
+                        "line": 104
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d94f9763e12f5aa6433f-4540dfef86ff0f503a26",
+              "file": "e2e/auth/authentication.spec.ts",
+              "line": 102,
+              "column": 7
+            },
+            {
+              "title": "Kiểm tra session persistence",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 4,
+                      "status": "failed",
+                      "duration": 14447,
+                      "error": {
+                        "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"login-button\"]')\u001b[22m\n",
+                        "stack": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"login-button\"]')\u001b[22m\n\n    at action (E:\\Landing page\\tests\\helpers\\test-helpers.ts:32:29)\n    at TestLogger.logStep (E:\\Landing page\\tests\\helpers\\test-helpers.ts:11:15)\n    at AuthHelper.login (E:\\Landing page\\tests\\helpers\\test-helpers.ts:31:27)\n    at E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts:129:22",
+                        "location": {
+                          "file": "E:\\Landing page\\tests\\helpers\\test-helpers.ts",
+                          "column": 29,
+                          "line": 32
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mhelpers\\test-helpers.ts:32\n\n\u001b[0m \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m login(username\u001b[33m:\u001b[39m string \u001b[33m=\u001b[39m \u001b[32m'admin'\u001b[39m\u001b[33m,\u001b[39m password\u001b[33m:\u001b[39m string \u001b[33m=\u001b[39m \u001b[32m'admin123'\u001b[39m) {\n \u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlogger\u001b[33m.\u001b[39mlogStep(\u001b[32m'Opening login modal'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m             \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[32m'[data-testid=\"login-button\"]'\u001b[39m)\n \u001b[90m    |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m             \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"login-modal\"]'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m 34 |\u001b[39m         })\n \u001b[90m 35 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "E:\\Landing page\\tests\\helpers\\test-helpers.ts",
+                            "column": 29,
+                            "line": 32
+                          },
+                          "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"login-button\"]')\u001b[22m\n\n\n\u001b[90m   at \u001b[39mhelpers\\test-helpers.ts:32\n\n\u001b[0m \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m login(username\u001b[33m:\u001b[39m string \u001b[33m=\u001b[39m \u001b[32m'admin'\u001b[39m\u001b[33m,\u001b[39m password\u001b[33m:\u001b[39m string \u001b[33m=\u001b[39m \u001b[32m'admin123'\u001b[39m) {\n \u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlogger\u001b[33m.\u001b[39mlogStep(\u001b[32m'Opening login modal'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m             \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[32m'[data-testid=\"login-button\"]'\u001b[39m)\n \u001b[90m    |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m             \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"login-modal\"]'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m 34 |\u001b[39m         })\n \u001b[90m 35 |\u001b[39m\u001b[0m\n\u001b[2m    at action (E:\\Landing page\\tests\\helpers\\test-helpers.ts:32:29)\u001b[22m\n\u001b[2m    at TestLogger.logStep (E:\\Landing page\\tests\\helpers\\test-helpers.ts:11:15)\u001b[22m\n\u001b[2m    at AuthHelper.login (E:\\Landing page\\tests\\helpers\\test-helpers.ts:31:27)\u001b[22m\n\u001b[2m    at E:\\Landing page\\tests\\e2e\\auth\\authentication.spec.ts:129:22\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "🔍 [Authentication Tests] Khởi tạo test trên môi trường: test\n"
+                        },
+                        {
+                          "text": "✅ [Authentication Tests] Khởi tạo test trên môi trường: test - Completed\n"
+                        },
+                        {
+                          "text": "🔍 [Authentication Tests] Opening login modal\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-24T08:47:39.160Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "E:\\Landing page\\test-results\\e2e-auth-authentication-Au-4e697-iểm-tra-session-persistence-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "E:\\Landing page\\test-results\\e2e-auth-authentication-Au-4e697-iểm-tra-session-persistence-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "E:\\Landing page\\test-results\\e2e-auth-authentication-Au-4e697-iểm-tra-session-persistence-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "E:\\Landing page\\tests\\helpers\\test-helpers.ts",
+                        "column": 29,
+                        "line": 32
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d94f9763e12f5aa6433f-b58bfaa722449123b9b2",
+              "file": "e2e/auth/authentication.spec.ts",
+              "line": 128,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-10-24T08:47:37.043Z",
+    "duration": 17238.537,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 5,
+    "flaky": 0
+  }
+}
