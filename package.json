@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && prisma db push && npm run db:seed && next build",
+    "build": "node scripts/vercel-build.js",
+    "build:local": "prisma generate && prisma db push && npm run db:seed && next build",
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
