@@ -7,6 +7,9 @@ import { BlogFormData } from '@/shared/types'
 // GET /api/blog - Get all blog posts
 export async function getBlogPosts() {
   try {
+    // Test database connection first
+    await prisma.$connect()
+    
     const blogPosts = await prisma.blogPost.findMany({
       include: {
         author: {
@@ -28,12 +31,16 @@ export async function getBlogPosts() {
     })
   } catch (error) {
     console.error('Error fetching blog posts:', error)
+    console.error('Database URL:', process.env.DATABASE_URL)
+    console.error('Environment:', process.env.NODE_ENV)
+    
     return NextResponse.json(
       {
         success: false,
         error: {
           message: 'Failed to fetch blog posts',
-          code: 'FETCH_ERROR'
+          code: 'FETCH_ERROR',
+          details: process.env.NODE_ENV === 'development' ? error.message : undefined
         }
       },
       { status: 500 }

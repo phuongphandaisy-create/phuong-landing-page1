@@ -13,19 +13,40 @@ export default function BlogPage() {
     fetchPosts()
   }, [])
 
-  const fetchPosts = async () => {
+  const fetchPosts = async (retryWithInit = true) => {
     try {
       setLoading(true)
+      
       const response = await fetch('/api/blog')
       const result = await response.json()
 
       if (result.success) {
         setPosts(result.data)
+        setError(null)
       } else {
-        setError(result.error?.message || 'Failed to fetch blog posts')
+        // If fetch failed and we haven't tried initializing yet, try to init database
+        if (retryWithInit && result.error?.code === 'FETCH_ERROR') {
+          console.log('Attempting to initialize database...')
+          try {
+            const initResponse = await fetch('/api/init-db', { method: 'POST' })
+            const initResult = await initResponse.json()
+            
+            if (initResult.success) {
+              console.log('Database initialized, retrying fetch...')
+              // Retry fetching posts after initialization
+              return fetchPosts(false)
+            }
+          } catch (initError) {
+            console.error('Database initialization failed:', initError)
+          }
+        }
+        
+        const errorMsg = result.error?.message || 'Failed to fetch blog posts'
+        const details = result.error?.details ? ` (${result.error.details})` : ''
+        setError(errorMsg + details)
       }
     } catch (err) {
-      setError('Failed to fetch blog posts')
+      setError(`Network error: ${err.message}`)
       console.error('Error fetching posts:', err)
     } finally {
       setLoading(false)
@@ -76,14 +97,32 @@ export default function BlogPage() {
             <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
               Blog
             </h1>
-            <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-6 max-w-md mx-auto">
-              <p className="text-red-600 dark:text-red-400">{error}</p>
-              <button 
-                onClick={fetchPosts}
-                className="mt-4 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors duration-200"
-              >
-                Thử lại
-              </button>
+            <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-6 max-w-lg mx-auto">
+              <p className="text-red-600 dark:text-red-400 mb-4">{error}</p>
+              <div className="flex gap-2 flex-wrap">
+                <button 
+                  onClick={() => fetchPosts()}
+                  className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors duration-200"
+                >
+                  Thử lại
+                </button>
+                <button 
+                  onClick={async () => {
+                    try {
+                      const response = await fetch('/api/health')
+                      const result = await response.json()
+                      console.log('Health check result:', result)
+                      alert('Check console for health status')
+                    } catch (err) {
+                      console.error('Health check failed:', err)
+                      alert('Health check failed - see console')
+                    }
+                  }}
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
+                >
+                  Kiểm tra hệ thống
+                </button>
+              </div>
             </div>
           </div>
         </div>

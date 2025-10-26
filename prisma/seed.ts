@@ -6,12 +6,15 @@ async function main() {
   console.log('🌱 Seeding database...')
 
   // Create default admin user
+  const adminPassword = process.env.ADMIN_PASSWORD || 'admin123'
   const adminUser = await prisma.user.upsert({
     where: { username: 'admin' },
-    update: {},
+    update: {
+      password: adminPassword, // Update password if user exists
+    },
     create: {
       username: 'admin',
-      password: 'admin123', // Plain text for demo purposes as per requirements
+      password: adminPassword, // Plain text for demo purposes as per requirements
     },
   })
 

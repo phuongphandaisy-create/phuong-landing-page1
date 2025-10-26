@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && prisma db push && npm run db:seed && next build",
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
@@ -14,7 +14,9 @@
     "db:generate": "prisma generate",
     "db:seed": "tsx prisma/seed.ts",
     "db:setup": "node scripts/setup-db.js",
+    "db:init-prod": "node scripts/init-db-production.js",
     "test:setup": "node scripts/test-setup.js",
+    "test:prod": "node scripts/test-production-setup.js",
     "e2e": "npm run test:setup && playwright test",
     "e2e:headed": "playwright test --headed",
     "e2e:debug": "playwright test --debug",

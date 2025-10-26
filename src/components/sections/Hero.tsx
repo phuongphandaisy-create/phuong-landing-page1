@@ -25,11 +25,11 @@ export function Hero() {
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up">
             <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Phuong&apos;ts Corner
+              Phuong&apos;s Corner
             </span>
             <br />
             <span className="text-gray-900 dark:text-gray-100">
-              
+
             </span>
           </h1>
 
@@ -39,7 +39,7 @@ export function Hero() {
             <span className="font-semibold text-indigo-600 dark:text-indigo-400">Next.js 14</span>,{' '}
             <span className="font-semibold text-purple-600 dark:text-purple-400">TypeScript</span>, and{' '}
             <span className="font-semibold text-pink-600 dark:text-pink-400">Tailwind CSS</span>.
-            Let&apos;ts explore it with me!
+            Let&apos;s explore it with me!
           </p>
 
           {/* CTA Buttons */}
