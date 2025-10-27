@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/vercel-build.js",
+    "build": "prisma generate && prisma db push && next build",
     "build:local": "prisma generate && prisma db push && npm run db:seed && next build",
     "start": "next start",
     "lint": "next lint",
@@ -30,7 +30,9 @@
     "e2e:report": "playwright show-report",
     "test:runner": "node scripts/test-runner.js",
     "test:check": "node scripts/test-runner.js check",
-    "test:all": "node scripts/test-runner.js all"
+    "test:all": "node scripts/test-runner.js all",
+    "setup:vercel-postgres": "node scripts/setup-vercel-postgres.js",
+    "migrate:postgres": "node scripts/migrate-to-postgres.js"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
